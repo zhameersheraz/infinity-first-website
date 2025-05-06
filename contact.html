@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>CONTACT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+
+ body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a0a; 
+  color: #ffffff;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.95),
+    rgba(15, 15, 15, 0.95)
+  ),
+  url("contactbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 70px;
+}
+
+
+.navbar {
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgba(15, 15, 15, 0.95);
+  border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid #64ffda;
+}
+
+.navbar-content {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.logo svg {
+  width: 50px;
+  height: auto;
+  filter: drop-shadow(0 0 3px rgba(100, 255, 218, 0.7));
+  transition: all 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .logo-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #64ffda;
+  text-shadow: 0 0 5px rgba(100, 255, 218, 0.3);
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+
+.navbar .logo:hover .logo-text {
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.7);
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-align: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+}
+
+.navbar .nav-links a.active {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  position: relative; 
+}
+
+.navbar .nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%; 
+  height: 2px; 
+  background-color: #64ffda; 
+}
+
+.navbar .login-button {
+  background-color: transparent;
+  color: #64ffda;
+  border: 1.5px solid #64ffda;
+  border-radius: 6px;
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-left: 50px;
+}
+
+.navbar .login-button:hover {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda; 
+  box-shadow: 0 7px 15px rgba(100, 255, 218, 0.3);
+}
+
+/* Mobile menu button styles */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.mobile-menu-btn span {
+  width: 100%;
+  height: 2px;
+  background-color: #64ffda;
+  transition: all 0.3s ease;
+}
+
+/* Mobile login button only visible on mobile */
+.mobile-login-button {
+  display: none;
+}
+
+.contact-container {
+  width: 500px;
+  margin: 0px auto 50px;
+}
+
+.contact-card {
+  background-color: rgba(10, 10, 10, 0.95); 
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid #64ffda;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #64ffda;
+  margin: 0 auto 24px;
+  display: block;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+}
+
+.contact-title {
+  color: white;
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 32px;
+}
+
+.contact-info {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: rgba(100, 255, 218, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.contact-label {
+  color: #64ffda;
+  font-weight: bold;
+  min-width: 120px;
+}
+
+.contact-value {
+  color: #ffffff;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 1024px) {
+  body {
+    overflow: auto;
+  }
+  
+  .navbar-content {
+    padding: 0 30px;
+  }
+  
+  .contact-container {
+    width: 80%;
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-content {
+    padding: 0 20px;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: rgba(15, 15, 15, 0.98);
+    flex-direction: column;
+    padding: 40px 0;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .navbar .nav-links a {
+    font-size: 18px;
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .login-button {
+    display: none;
+  }
+
+  .mobile-login-button {
+    display: block;
+  }
+
+  .contact-container {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .contact-card {
+    padding: 20px;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .contact-title {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-label {
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar .logo-text {
+    font-size: 20px;
+  }
+
+  .logo svg {
+    width: 40px;
+  }
+
+  .contact-container {
+    width: 95%;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .contact-title {
+    font-size: 24px;
+  }
+
+  .contact-item {
+    padding: 10px;
+  }
+
+  .contact-info {
+    gap: 12px;
+  }
+}
+    
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="navbar-content">
+            <a href="#" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+                    <defs>
+                      <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#050505" />
+                        <stop offset="100%" stop-color="#000000" />
+                      </linearGradient>
+                      <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#64ffda" stop-opacity="0.6" />
+                        <stop offset="100%" stop-color="#38a89d" stop-opacity="0.3" />
+                      </linearGradient>
+                      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="5" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                      </filter>
+                    </defs>
+                    
+                    <path d="M250 50 L420 120 L420 240 C420 350 340 410 250 440 C160 410 80 350 80 240 L80 120 Z" fill="url(#shieldGradient)" stroke="#64ffda" stroke-width="6"/>
+                    
+                    <path d="M250 80 L390 140 L390 235 C390 330 325 380 250 405 C175 380 110 330 110 235 L110 140 Z" fill="#000000" stroke="#64ffda" stroke-width="3" opacity="0.9"/>
+                    <path d="M250 110 L360 160 L360 230 C360 310 310 350 250 375 C190 350 140 310 140 230 L140 160 Z" fill="#000000" stroke="#64ffda" stroke-width="2" stroke-dasharray="2,1" opacity="0.7"/>
+                    
+                    <g opacity="0.2">
+                      <text x="140" y="200" font-family="monospace" font-size="8" fill="#64ffda">01001010110110110110</text>
+                      <text x="140" y="215" font-family="monospace" font-size="8" fill="#64ffda">10110101101001010110</text>
+                      <text x="140" y="230" font-family="monospace" font-size="8" fill="#64ffda">01010101101010101010</text>
+                      <text x="140" y="245" font-family="monospace" font-size="8" fill="#64ffda">11010101011010101010</text>
+                      <text x="140" y="260" font-family="monospace" font-size="8" fill="#64ffda">10101101010101010110</text>
+                      <text x="140" y="275" font-family="monospace" font-size="8" fill="#64ffda">01010110101010101101</text>
+                      <text x="140" y="290" font-family="monospace" font-size="8" fill="#64ffda">10101011010101010101</text>
+                      <text x="140" y="305" font-family="monospace" font-size="8" fill="#64ffda">01010101010101010101</text>
+                    </g>
+                    
+                    <path d="M140 230 L180 230 L180 280 L220 280 L220 320 L280 320 L280 280 L320 280 L320 230 L360 230" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+                    <path d="M180 160 L180 230" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+                    <path d="M320 160 L320 230" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+                    <path d="M250 140 L250 190" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+                    <path d="M220 320 L220 370" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+                    <path d="M280 320 L280 370" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+                    
+                    <circle cx="180" cy="230" r="6" fill="#64ffda" filter="url(#glow)"/>
+                    <circle cx="220" cy="280" r="6" fill="#64ffda" filter="url(#glow)"/>
+                    <circle cx="280" cy="280" r="6" fill="#64ffda" filter="url(#glow)"/>
+                    <circle cx="320" cy="230" r="6" fill="#64ffda" filter="url(#glow)"/>
+                    <circle cx="250" cy="140" r="6" fill="#64ffda" filter="url(#glow)"/>
+                    <circle cx="250" cy="190" r="6" fill="#64ffda" filter="url(#glow)"/>
+                    <circle cx="220" cy="320" r="6" fill="#64ffda" filter="url(#glow)"/>
+                    <circle cx="280" cy="320" r="6" fill="#64ffda" filter="url(#glow)"/>
+                    
+                    <g transform="translate(215, 200)">
+                      <rect x="-35" y="0" width="70" height="65" rx="10" ry="10" fill="#000000" stroke="#64ffda" stroke-width="3"/>
+                      <path d="M-20 0 L-20 -30 C-20 -50 20 -50 20 -30 L20 0" fill="none" stroke="url(#glowGradient)" stroke-width="11" stroke-linecap="round"/>
+                      
+                      <circle cx="0" cy="25" r="15" fill="#000000" stroke="#64ffda" stroke-width="2.5"/>
+                      <path d="M0 25 L0 45" stroke="#64ffda" stroke-width="6" stroke-linecap="round"/>
+                      
+                      <path d="M-8 25 L8 25" stroke="#64ffda" stroke-width="1.5"/>
+                      <path d="M-6 30 L6 30" stroke="#64ffda" stroke-width="1.5"/>
+                    </g>
+                    
+                    <g opacity="0.6">
+                      <path d="M175 370 L190 360 L205 370 L205 390 L190 400 L175 390 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                      <path d="M205 370 L220 360 L235 370 L235 390 L220 400 L205 390 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                      <path d="M235 370 L250 360 L265 370 L265 390 L250 400 L235 390 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                      <path d="M265 370 L280 360 L295 370 L295 390 L280 400 L265 390 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                      <path d="M190 340 L205 330 L220 340 L220 360 L205 370 L190 360 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                      <path d="M220 340 L235 330 L250 340 L250 360 L235 370 L220 360 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                      <path d="M250 340 L265 330 L280 340 L280 360 L265 370 L250 360 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                    </g>
+                    
+                    <path d="M140 180 L170 180" stroke="#64ffda" stroke-width="2"/>
+                    <path d="M330 180 L360 180" stroke="#64ffda" stroke-width="2"/>
+                    <path d="M140 180 Q250 145 360 180" stroke="#64ffda" stroke-width="1.5" fill="none"/>
+                    <path d="M140 180 Q250 155 360 180" stroke="#64ffda" stroke-width="0.8" fill="none" opacity="0.7"/>
+                    <path d="M140 180 Q250 165 360 180" stroke="#64ffda" stroke-width="0.5" fill="none" opacity="0.5"/>
+                    <path d="M140 180 Q250 175 360 180" stroke="#64ffda" stroke-width="0.3" fill="none" opacity="0.3"/>
+                    
+                    <circle cx="250" cy="250" r="180" fill="none" stroke="#64ffda" stroke-width="0.5" opacity="0.2"/>
+                    <circle cx="250" cy="250" r="190" fill="none" stroke="#64ffda" stroke-width="0.3" opacity="0.15"/>
+                    <circle cx="250" cy="250" r="200" fill="none" stroke="#64ffda" stroke-width="0.2" opacity="0.1"/>
+                    
+                    <circle cx="250" cy="250" r="120" fill="none" stroke="#64ffda" stroke-width="2" opacity="0.1"/>
+                    <circle cx="250" cy="250" r="130" fill="none" stroke="#64ffda" stroke-width="1.5" opacity="0.08"/>
+                    <circle cx="250" cy="250" r="140" fill="none" stroke="#64ffda" stroke-width="1" opacity="0.05"/>
+                </svg>
+                <span class="logo-text">TAMPUGAO</span>
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="aboutme.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="login.html" class="mobile-login-button">Login / Sign Up</a>
+            </div>
+            <a href="login.html" class="login-button">Login / Sign Up</a>
+        </div>
+    </div>
+
+    <div class="contact-container">
+        <div class="contact-card">
+            <section class="about-container">
+                <svg viewBox="0 0 200 200" class="avatar">
+                    <defs>
+                        <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#111111" />
+                            <stop offset="100%" stop-color="#000000" />
+                        </linearGradient>
+                        <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+                
+                    <circle cx="100" cy="100" r="85" fill="url(#backgroundGradient)" opacity="0.9"/>
+                
+                    <path d="M40,100 L160,100" stroke="#64ffda" stroke-width="0.5" opacity="0.3"/>
+                    <path d="M100,40 L100,160" stroke="#64ffda" stroke-width="0.5" opacity="0.3"/>
+                
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="#64ffda" stroke-width="0.8" opacity="0.6"/>
+                    <circle cx="100" cy="100" r="55" fill="none" stroke="#64ffda" stroke-width="0.8" opacity="0.6"/>
+                    <circle cx="100" cy="100" r="40" fill="none" stroke="#64ffda" stroke-width="0.8" opacity="0.6"/>
+                
+                    <circle cx="100" cy="80" r="18" fill="#64ffda" stroke="#64ffda" stroke-width="1"/>
+                    <path d="M75,135 C75,110 125,110 125,135" fill="#64ffda" stroke="#64ffda" stroke-width="1"/>
+                    <path d="M75,135 C75,155 125,155 125,135" fill="#64ffda" stroke="#64ffda" stroke-width="1"/>
+                
+                    <circle cx="60" cy="60" r="3" fill="#64ffda" filter="url(#softGlow)"/>
+                    <circle cx="140" cy="60" r="3" fill="#64ffda" filter="url(#softGlow)"/>
+                    <circle cx="60" cy="140" r="3" fill="#64ffda" filter="url(#softGlow)"/>
+                    <circle cx="140" cy="140" r="3" fill="#64ffda" filter="url(#softGlow)"/>
+                
+                    <path d="M60,60 L90,80" stroke="#64ffda" stroke-width="0.8" opacity="0.5"/>
+                    <path d="M140,60 L110,80" stroke="#64ffda" stroke-width="0.8" opacity="0.5"/>
+                    <path d="M60,140 L75,135" stroke="#64ffda" stroke-width="0.8" opacity="0.5"/>
+                    <path d="M140,140 L125,135" stroke="#64ffda" stroke-width="0.8" opacity="0.5"/>
+                
+                    <path d="M50,100 C50,70 70,50 100,50" fill="none" stroke="#64ffda" stroke-width="1.2" stroke-dasharray="4,2"/>
+                    <path d="M150,100 C150,70 130,50 100,50" fill="none" stroke="#64ffda" stroke-width="1.2" stroke-dasharray="4,2"/>
+                    <path d="M50,100 C50,130 70,150 100,150" fill="none" stroke="#64ffda" stroke-width="1.2" stroke-dasharray="4,2"/>
+                    <path d="M150,100 C150,130 130,150 100,150" fill="none" stroke="#64ffda" stroke-width="1.2" stroke-dasharray="4,2"/>
+                
+                 
+                </svg>
+                
+            <h2 class="contact-title">My Contacts</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">Phone:</span>
+                    <span class="contact-value">09519401416</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Email:</span>
+                    <span class="contact-value">zhameer.tampugao@sccpag.edu.ph</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Social Media:</span>
+                    <span class="contact-value">Zhameer Tampugao</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Address:</span>
+                    <span class="contact-value">Labangan, Zamboanga del Sur</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            navLinks.classList.toggle('active');
+            
+            const spans = menuBtn.getElementsByTagName('span');
+            if (navLinks.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>

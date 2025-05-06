@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HOME</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+        <style>
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a; 
+    color: #ffffff;
+    overflow: hidden;
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 10, 10, 0.95),
+      rgba(15, 15, 15, 0.95)
+    ),
+    url("homebg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 70px;
+}
+
+
+.navbar {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgba(15, 15, 15, 0.95);
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #64ffda;
+}
+  
+.navbar-content {
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+  
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+  
+.login-svg {
+    width: 50px;
+    height: auto;
+    filter: drop-shadow(0 0 3px rgba(100, 255, 218, 0.7));
+    transition: all 0.3s ease;
+}
+  
+.navbar .logo-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #64ffda;
+    text-shadow: 0 0 5px rgba(100, 255, 218, 0.3);
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+  
+.navbar .logo:hover .logo-text {
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.7);
+}
+  
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+  
+.navbar .nav-links a {
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+  
+.navbar .nav-links a:hover {
+    background: rgba(100, 255, 218, 0.1);
+    color: #64ffda;
+}
+  
+.navbar .nav-links a.active {
+    background: rgba(100, 255, 218, 0.1);
+    color: #64ffda;
+    position: relative; 
+}
+  
+.navbar .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%; 
+    height: 2px; 
+    background-color: #64ffda; 
+}
+  
+.navbar .login-button {
+    background-color: transparent;
+    color: #64ffda;
+    border: 1.5px solid #64ffda;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-left: 50px;
+}
+  
+.navbar .login-button:hover {
+    background: rgba(100, 255, 218, 0.1);
+    color: #64ffda; 
+    box-shadow: 0 7px 15px rgba(100, 255, 218, 0.3);
+}
+
+.grid-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 255, 240, 0.07) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0, 255, 240, 0.07) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 2;
+    perspective: 1000px;
+    opacity: 0.4;
+}
+
+.logo svg {
+    width: 50px;
+    height: auto;
+    filter: drop-shadow(0 0 3px rgba(100, 255, 218, 0.7));
+    transition: all 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    font-family: 'Orbitron', sans-serif;
+    color: #64ffda;
+    font-size: 20px;
+}
+
+
+.main-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.content-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 50px;
+}
+
+
+.intro-section {
+    max-width: 500px;
+    z-index: 10;
+    margin-bottom: 100px;
+}
+
+.intro-section h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: #ffffff;
+}
+
+.highlight {
+    color: #64ffda;
+    position: relative;
+    display: inline-block;
+}
+
+
+.intro-section p {
+    font-size: 18px;
+    font-weight: 300;
+    color: #b3b3b3;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+.intro-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary {
+    background-color: #64ffda;
+    color: #0a0a0a;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 8px 20px rgba(100, 255, 218, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #64ffda;
+    border: 1.5px solid #64ffda;
+    border-radius: 6px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.15);
+}
+
+
+.main-logo{
+    width: 550px;
+    margin-bottom: 50px;
+}
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.mobile-menu-btn span {
+    width: 100%;
+    height: 2px;
+    background-color: #64ffda;
+    transition: all 0.3s ease;
+}
+
+.mobile-login-button {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+
+    body {
+        overflow: auto;
+      }
+      
+    .content-wrapper {
+        padding: 0 30px;
+    }
+
+    .intro-section h1 {
+        font-size: 44px;
+    }
+
+    .main-logo {
+        width: 450px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar-content {
+        padding: 0 20px;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: rgba(15, 15, 15, 0.98);
+        flex-direction: column;
+        padding: 40px 0;
+        transition: right 0.3s ease;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .navbar .nav-links a {
+        font-size: 18px;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .login-button {
+        display: none;
+    }
+
+    .mobile-login-button {
+        display: block;
+    }
+
+    .content-wrapper {
+        flex-direction: column-reverse; 
+        text-align: center;
+        justify-content: center;
+    }
+
+    .intro-section {
+        margin-bottom: 0;
+    }
+
+    .intro-section h1 {
+        font-size: 36px;
+    }
+
+    .intro-section p {
+        font-size: 16px;
+    }
+
+    .intro-section p br {
+        display: none;
+    }
+
+    .intro-buttons {
+        justify-content: center;
+    }
+
+    .main-logo {
+        width: 100%;
+        max-width: 350px;
+        margin-top: 0; 
+        margin-bottom: 30px;
+        position: relative; 
+}
+
+@media screen and (max-width: 480px) {
+    .navbar .logo-text {
+        font-size: 20px;
+    }
+
+    .logo svg {
+        width: 40px;
+    }
+
+    .intro-section h1 {
+        font-size: 32px;
+    }
+
+    .intro-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 80%;        
+        padding: 10px 20px; 
+        font-size: 14px;    
+        margin: 0 auto;     
+    }
+
+    .main-logo {
+        max-width: 250px; 
+       
+    }
+    
+    .main-container {
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+}
+
+}
+
+        
+        </style>
+
+
+  
+
+
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="navbar-content">
+                <a href="#" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+                        <defs>
+                          <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#050505" />
+                            <stop offset="100%" stop-color="#000000" />
+                          </linearGradient>
+                          <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#64ffda" stop-opacity="0.6" />
+                            <stop offset="100%" stop-color="#38a89d" stop-opacity="0.3" />
+                          </linearGradient>
+                          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="5" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                          </filter>
+                        </defs>
+                        
+                        <path d="M250 50 L420 120 L420 240 C420 350 340 410 250 440 C160 410 80 350 80 240 L80 120 Z" fill="url(#shieldGradient)" stroke="#64ffda" stroke-width="6"/>
+                        
+                        <path d="M250 80 L390 140 L390 235 C390 330 325 380 250 405 C175 380 110 330 110 235 L110 140 Z" fill="#000000" stroke="#64ffda" stroke-width="3" opacity="0.9"/>
+                        <path d="M250 110 L360 160 L360 230 C360 310 310 350 250 375 C190 350 140 310 140 230 L140 160 Z" fill="#000000" stroke="#64ffda" stroke-width="2" stroke-dasharray="2,1" opacity="0.7"/>
+                        
+                        <g opacity="0.2">
+                          <text x="140" y="200" font-family="monospace" font-size="8" fill="#64ffda">01001010110110110110</text>
+                          <text x="140" y="215" font-family="monospace" font-size="8" fill="#64ffda">10110101101001010110</text>
+                          <text x="140" y="230" font-family="monospace" font-size="8" fill="#64ffda">01010101101010101010</text>
+                          <text x="140" y="245" font-family="monospace" font-size="8" fill="#64ffda">11010101011010101010</text>
+                          <text x="140" y="260" font-family="monospace" font-size="8" fill="#64ffda">10101101010101010110</text>
+                          <text x="140" y="275" font-family="monospace" font-size="8" fill="#64ffda">01010110101010101101</text>
+                          <text x="140" y="290" font-family="monospace" font-size="8" fill="#64ffda">10101011010101010101</text>
+                          <text x="140" y="305" font-family="monospace" font-size="8" fill="#64ffda">01010101010101010101</text>
+                        </g>
+                        
+                        <path d="M140 230 L180 230 L180 280 L220 280 L220 320 L280 320 L280 280 L320 280 L320 230 L360 230" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+                        <path d="M180 160 L180 230" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+                        <path d="M320 160 L320 230" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+                        <path d="M250 140 L250 190" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+                        <path d="M220 320 L220 370" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+                        <path d="M280 320 L280 370" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+                        
+                        <circle cx="180" cy="230" r="6" fill="#64ffda" filter="url(#glow)"/>
+                        <circle cx="220" cy="280" r="6" fill="#64ffda" filter="url(#glow)"/>
+                        <circle cx="280" cy="280" r="6" fill="#64ffda" filter="url(#glow)"/>
+                        <circle cx="320" cy="230" r="6" fill="#64ffda" filter="url(#glow)"/>
+                        <circle cx="250" cy="140" r="6" fill="#64ffda" filter="url(#glow)"/>
+                        <circle cx="250" cy="190" r="6" fill="#64ffda" filter="url(#glow)"/>
+                        <circle cx="220" cy="320" r="6" fill="#64ffda" filter="url(#glow)"/>
+                        <circle cx="280" cy="320" r="6" fill="#64ffda" filter="url(#glow)"/>
+                        
+                        <g transform="translate(215, 200)">
+                          <rect x="-35" y="0" width="70" height="65" rx="10" ry="10" fill="#000000" stroke="#64ffda" stroke-width="3"/>
+                          <path d="M-20 0 L-20 -30 C-20 -50 20 -50 20 -30 L20 0" fill="none" stroke="url(#glowGradient)" stroke-width="11" stroke-linecap="round"/>
+                          
+                          <circle cx="0" cy="25" r="15" fill="#000000" stroke="#64ffda" stroke-width="2.5"/>
+                          <path d="M0 25 L0 45" stroke="#64ffda" stroke-width="6" stroke-linecap="round"/>
+                          
+                          <path d="M-8 25 L8 25" stroke="#64ffda" stroke-width="1.5"/>
+                          <path d="M-6 30 L6 30" stroke="#64ffda" stroke-width="1.5"/>
+                        </g>
+                        
+                        <g opacity="0.6">
+                          <path d="M175 370 L190 360 L205 370 L205 390 L190 400 L175 390 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                          <path d="M205 370 L220 360 L235 370 L235 390 L220 400 L205 390 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                          <path d="M235 370 L250 360 L265 370 L265 390 L250 400 L235 390 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                          <path d="M265 370 L280 360 L295 370 L295 390 L280 400 L265 390 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                          <path d="M190 340 L205 330 L220 340 L220 360 L205 370 L190 360 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                          <path d="M220 340 L235 330 L250 340 L250 360 L235 370 L220 360 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                          <path d="M250 340 L265 330 L280 340 L280 360 L265 370 L250 360 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                        </g>
+                        
+                        <path d="M140 180 L170 180" stroke="#64ffda" stroke-width="2"/>
+                        <path d="M330 180 L360 180" stroke="#64ffda" stroke-width="2"/>
+                        <path d="M140 180 Q250 145 360 180" stroke="#64ffda" stroke-width="1.5" fill="none"/>
+                        <path d="M140 180 Q250 155 360 180" stroke="#64ffda" stroke-width="0.8" fill="none" opacity="0.7"/>
+                        <path d="M140 180 Q250 165 360 180" stroke="#64ffda" stroke-width="0.5" fill="none" opacity="0.5"/>
+                        <path d="M140 180 Q250 175 360 180" stroke="#64ffda" stroke-width="0.3" fill="none" opacity="0.3"/>
+                        
+                        <circle cx="250" cy="250" r="180" fill="none" stroke="#64ffda" stroke-width="0.5" opacity="0.2"/>
+                        <circle cx="250" cy="250" r="190" fill="none" stroke="#64ffda" stroke-width="0.3" opacity="0.15"/>
+                        <circle cx="250" cy="250" r="200" fill="none" stroke="#64ffda" stroke-width="0.2" opacity="0.1"/>
+                        
+                        <circle cx="250" cy="250" r="120" fill="none" stroke="#64ffda" stroke-width="2" opacity="0.1"/>
+                        <circle cx="250" cy="250" r="130" fill="none" stroke="#64ffda" stroke-width="1.5" opacity="0.08"/>
+                        <circle cx="250" cy="250" r="140" fill="none" stroke="#64ffda" stroke-width="1" opacity="0.05"/>
+                    </svg>
+                    <span class="logo-text">TAMPUGAO</span>
+                </a>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </button>
+              <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="aboutme.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="mobile-login-button">Login / Sign Up</a>
+            </div>
+            <a href="login.html" class="login-button">Login / Sign Up</a>
+        </div>
+    </div>
+      
+      <div id="root"></div>
+      <script type="module" src="/src/main.tsx"></script>
+
+      <script>
+          function toggleMenu() {
+              const navLinks = document.querySelector('.nav-links');
+              const menuBtn = document.querySelector('.mobile-menu-btn');
+              navLinks.classList.toggle('active');
+              
+  
+              const spans = menuBtn.getElementsByTagName('span');
+              if (navLinks.classList.contains('active')) {
+                  spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                  spans[1].style.opacity = '0';
+                  spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+              } else {
+                  spans[0].style.transform = 'none';
+                  spans[1].style.opacity = '1';
+                  spans[2].style.transform = 'none';
+              }
+          }
+      </script>
+        
+        <div class="main-container">
+            <div class="grid-lines"></div>
+            <div class="content-wrapper">
+                <div class="intro-section">
+                    <h1>Enterprise-Grade<br><span class="highlight">Cybersecurity</span><br>Solutions</h1>
+                    <p>Protecting your digital assets with advanced threat<br>intelligence and proactive defense strategies.</p>
+                    <div class="intro-buttons">
+                        <a href="dashboard.html" class="btn-primary">Dashboard</a>
+                        <a href="demo.html" class="btn-secondary">Request a Demo</a>
+                    </div>
+                </div>
+                
+                <div class="main-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+                    <defs>
+                      
+                      <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#0a0a0a" />
+                        <stop offset="100%" stop-color="#121212" />
+                      </linearGradient>
+                      
+                      <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#64ffda" />
+                        <stop offset="100%" stop-color="#38a89d" />
+                      </linearGradient>
+                      
+                      
+                      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="5" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                      </filter>
+                      
+                      <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="15" />
+                        <feOffset dx="0" dy="10" result="offsetblur" />
+                        <feComponentTransfer>
+                          <feFuncA type="linear" slope="0.3" />
+                        </feComponentTransfer>
+                        <feMerge>
+                          <feMergeNode />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
+                    </defs>
+                    
+                    
+                    
+                    <circle cx="400" cy="400" r="390" fill="none" stroke="#64ffda" stroke-width="0.5" opacity="0.1" />
+                    <circle cx="400" cy="400" r="350" fill="none" stroke="#64ffda" stroke-width="0.7" opacity="0.15" />
+                    <circle cx="400" cy="400" r="310" fill="none" stroke="#64ffda" stroke-width="1" opacity="0.2" />
+                    
+                 
+                    <path d="M190 190 H610 M190 310 H610 M190 430 H610 M190 550 H610 M190 190 V550 M310 190 V550 M430 190 V550 M550 190 V550" 
+                          stroke="#64ffda" stroke-width="0.5" opacity="0.2" />
+                    
+                  
+                    <path d="M400 220 L520 290 L520 430 L400 500 L280 430 L280 290 Z" 
+                          fill="none" stroke="url(#accentGradient)" stroke-width="2" filter="url(#glow)" />
+                    
+                   
+                    <path d="M400 260 L480 310 L480 410 L400 460 L320 410 L320 310 Z" 
+                          fill="rgba(100, 255, 218, 0.03)" stroke="#64ffda" stroke-width="1.5" />
+                    
+                    
+                    <circle cx="400" cy="365" r="70" fill="none" stroke="#64ffda" stroke-width="1.5" />
+                    <circle cx="400" cy="365" r="50" fill="none" stroke="#64ffda" stroke-width="1" />
+                    
+                   
+                    <circle cx="280" cy="290" r="8" fill="#64ffda" filter="url(#glow)" />
+                    <circle cx="280" cy="430" r="8" fill="#64ffda" filter="url(#glow)" />
+                    <circle cx="400" cy="220" r="8" fill="#64ffda" filter="url(#glow)" />
+                    <circle cx="400" cy="500" r="8" fill="#64ffda" filter="url(#glow)" />
+                    <circle cx="520" cy="290" r="8" fill="#64ffda" filter="url(#glow)" />
+                    <circle cx="520" cy="430" r="8" fill="#64ffda" filter="url(#glow)" />
+                    
+                    
+                    <circle cx="340" cy="365" r="6" fill="#64ffda" opacity="0.8" />
+                    <circle cx="460" cy="365" r="6" fill="#64ffda" opacity="0.8" />
+                    <circle cx="400" cy="305" r="6" fill="#64ffda" opacity="0.8" />
+                    <circle cx="400" cy="425" r="6" fill="#64ffda" opacity="0.8" />
+                    
+                 
+                    <path d="M340 365 L460 365 M400 305 L400 425" stroke="#64ffda" stroke-width="1.5" opacity="0.8" />
+                    
+                 
+                    <rect x="375" y="360" width="50" height="40" rx="5" ry="5" fill="#121212" stroke="#64ffda" stroke-width="1.5" />
+                    <path d="M385 360 V345 C385 335 415 335 415 345 V360" stroke="#64ffda" stroke-width="2" fill="none" />
+                    <circle cx="400" cy="380" r="7" fill="none" stroke="#64ffda" stroke-width="1.5" />
+                    <line x1="400" y1="380" x2="400" y2="390" stroke="#64ffda" stroke-width="2" />
+                    
+                
+                    <line x1="280" y1="290" x2="345" y2="325" stroke="#64ffda" stroke-width="1" opacity="0.6" />
+                    <line x1="280" y1="430" x2="345" y2="400" stroke="#64ffda" stroke-width="1" opacity="0.6" />
+                    <line x1="520" y1="290" x2="455" y2="325" stroke="#64ffda" stroke-width="1" opacity="0.6" />
+                    <line x1="520" y1="430" x2="455" y2="400" stroke="#64ffda" stroke-width="1" opacity="0.6" />
+                    <line x1="400" y1="220" x2="400" y2="295" stroke="#64ffda" stroke-width="1" opacity="0.6" />
+                    <line x1="400" y1="500" x2="400" y2="435" stroke="#64ffda" stroke-width="1" opacity="0.6" />
+                    
+                
+                    <path d="M260 250 L290 250 M510 250 L540 250" stroke="#64ffda" stroke-width="1" opacity="0.5" />
+                    <path d="M260 470 L290 470 M510 470 L540 470" stroke="#64ffda" stroke-width="1" opacity="0.5" />
+                    
+                
+                    <text x="290" y="260" font-family="monospace" font-size="8" fill="#64ffda" opacity="0.5">10110101</text>
+                    <text x="455" y="260" font-family="monospace" font-size="8" fill="#64ffda" opacity="0.5">01010101</text>
+                    <text x="290" y="480" font-family="monospace" font-size="8" fill="#64ffda" opacity="0.5">01001101</text>
+                    <text x="455" y="480" font-family="monospace" font-size="8" fill="#64ffda" opacity="0.5">11010011</text>
+                    
+                    
+                    <path d="M250 360 A150 150 0 0 1 400 210 A150 150 0 0 1 550 360 A150 150 0 0 1 400 510 A150 150 0 0 1 250 360" 
+                          fill="none" stroke="#64ffda" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4" />
+                    
+               
+                    <circle cx="220" cy="280" r="5" fill="#64ffda" opacity="0.6" />
+                    <circle cx="220" cy="440" r="5" fill="#64ffda" opacity="0.6" />
+                    <circle cx="580" cy="280" r="5" fill="#64ffda" opacity="0.6" />
+                    <circle cx="580" cy="440" r="5" fill="#64ffda" opacity="0.6" />
+                    
+                 
+                    <line x1="220" y1="280" x2="280" y2="290" stroke="#64ffda" stroke-width="0.8" opacity="0.4" />
+                    <line x1="220" y1="440" x2="280" y2="430" stroke="#64ffda" stroke-width="0.8" opacity="0.4" />
+                    <line x1="580" y1="280" x2="520" y2="290" stroke="#64ffda" stroke-width="0.8" opacity="0.4" />
+                    <line x1="580" y1="440" x2="520" y2="430" stroke="#64ffda" stroke-width="0.8" opacity="0.4" />
+                    
+                   
+                    <path d="M400 365 L340 325 M400 365 L340 405 M400 365 L460 325 M400 365 L460 405" 
+                          stroke="#64ffda" stroke-width="0.8" opacity="0.5" />
+                          
+               
+                    <path d="M630 360 L610 330 L620 300 L650 300 L660 330 L640 360 Z" fill="none" stroke="#64ffda" stroke-width="0.8" opacity="0.3" />
+                    <path d="M170 360 L190 330 L180 300 L150 300 L140 330 L160 360 Z" fill="none" stroke="#64ffda" stroke-width="0.8" opacity="0.3" />
+                    <path d="M400 170 L430 150 L460 170 L460 200 L430 220 L400 200 Z" fill="none" stroke="#64ffda" stroke-width="0.8" opacity="0.3" />
+                    <path d="M400 550 L430 530 L460 550 L460 580 L430 600 L400 580 Z" fill="none" stroke="#64ffda" stroke-width="0.8" opacity="0.3" />
+                  </svg>
+                </div>
+
+
+            </div>
+        </div>
+    </body>
+
+</html>
+        

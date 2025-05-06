@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>SERVICES</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a0a; 
+  color: #ffffff;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.95),
+    rgba(15, 15, 15, 0.95)
+  ),
+  url("servicesbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 70px;
+}
+
+.navbar {
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgba(15, 15, 15, 0.95);
+  border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid #64ffda;
+}
+
+.navbar-content {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.logo svg {
+  width: 50px;
+  height: auto;
+  filter: drop-shadow(0 0 3px rgba(100, 255, 218, 0.7));
+  transition: all 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .logo-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #64ffda;
+  text-shadow: 0 0 5px rgba(100, 255, 218, 0.3);
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+
+.navbar .logo:hover .logo-text {
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.7);
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-align: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+}
+
+.navbar .nav-links a.active {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  position: relative; 
+}
+
+.navbar .nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%; 
+  height: 2px; 
+  background-color: #64ffda; 
+}
+
+.navbar .login-button {
+  background-color: transparent;
+  color: #64ffda;
+  border: 1.5px solid #64ffda;
+  border-radius: 6px;
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-left: 50px;
+}
+
+.navbar .login-button:hover {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda; 
+  box-shadow: 0 7px 15px rgba(100, 255, 218, 0.3);
+}
+
+h2 {
+  color: white;
+  margin: 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  gap: 20px; 
+  padding: 128px 20px 32px; 
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  justify-content: center; 
+}
+
+
+.service-card {
+  background: rgba(10, 10, 10, 0.95); 
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  border-color: rgba(100, 255, 218, 0.3);
+  box-shadow: 0 4px 20px rgba(100, 255, 218, 0.1);
+  border-radius: 12px;
+  padding: 25px;  
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  margin-bottom: 150px;
+  display: block;
+}
+
+.read-more {
+  width: 100%;
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  border: 1px solid #64ffda;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; 
+  transition: all 0.3s ease;
+  font-size: 14px; 
+  margin-top: auto;
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 16px; 
+  margin-bottom: 24px; 
+}
+
+.service-icon {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  padding: 10px; 
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-description {
+  color: #8892b0;
+  margin-bottom: 20px; 
+  line-height: 1.6;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.feature-list {
+  list-style: none;
+  margin-bottom: 25px; 
+  margin-left: -35px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  color: #8892b0;
+  margin-bottom: 15px;
+  font-size: 15px; 
+}
+
+.feature-list li::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #64ffda;
+  border-radius: 50%;
+  margin-right: 12px; 
+}
+
+.read-more:hover {
+  background: rgba(100, 255, 218, 0.2);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1100;
+  align-items: center;
+  justify-content: center;
+  padding: 16px; 
+}
+
+.popup-box {
+  background: rgba(10, 10, 10, 0.95); 
+  border: 1px solid #64ffda;
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  gap: 16px; 
+  margin-bottom: 16px;
+  padding-bottom: 16px; 
+  border-bottom: 1px solid #64ffda;
+}
+
+.popup-icon {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  padding: 16px; 
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-header h2 {
+  color: #64ffda;
+  font-size: 24px; 
+  margin: 0;
+}
+
+.popup-body h3 {
+  color: #64ffda;
+  margin-bottom: 12px;
+}
+
+.popup-body p {
+  color: #8892b0;
+  margin-bottom: 16px; 
+  line-height: 1.5;
+}
+
+.highlight {
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  color: #64ffda;
+  padding: 16px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 550;
+}
+
+.calculator-container {
+  background: rgba(10, 10, 10, 0.95); 
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.option-group {
+  margin-bottom: 10px;
+}
+
+.calculator-input {
+  background: rgba(10, 10, 10, 0.95); 
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  border-radius: 4px;
+  color: white;
+  padding: 6px;
+  margin-left: 8px;
+  width: 60px;
+}
+
+.checkbox-group {
+  margin: 5px 0;
+  color: #8892b0;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.calculator-btn {
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  border: 1px solid #64ffda;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 8px 0;
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.calculator-btn:hover {
+  background: rgba(100, 255, 218, 0.2);
+}
+
+.result-container {
+  background: rgba(10, 10, 10, 0.95); 
+  border: 1px solid #64ffda;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.result-header {
+  color: #64ffda;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.result-value {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.result-label {
+  color: #8892b0;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.strength-meter {
+  width: 100%;
+  height: 8px;
+  background: rgba(17, 25, 40, 0.8);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.strength-bar {
+  height: 100%;
+  width: 0;
+  transition: width 0.5s;
+}
+
+.strength-label {
+  color: #64ffda;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.very-weak {
+  background-color: #ff4d4d;
+  width: 20%;
+}
+
+.weak {
+  background-color: #ffa64d;
+  width: 40%;
+}
+
+.medium {
+  background-color: #ffff4d;
+  width: 60%;
+}
+
+.strong {
+  background-color: #4dff4d;
+  width: 80%;
+}
+
+.very-strong {
+  background-color: #64ffda;
+  width: 100%;
+}
+
+label {
+  color: #8892b0;
+  font-size: 14px;
+}
+
+input[type="checkbox"] {
+  accent-color: #64ffda;
+  margin-right: 5px;
+}
+
+
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.mobile-menu-btn span {
+    width: 100%;
+    height: 2px;
+    background-color: #64ffda;
+    transition: all 0.3s ease;
+}
+
+
+.mobile-login-button {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        overflow: auto;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 300px);
+        padding: 100px 20px 32px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-content {
+        padding: 0 20px;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: rgba(15, 15, 15, 0.98);
+        flex-direction: column;
+        padding: 40px 0;
+        transition: right 0.3s ease;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .navbar .nav-links a {
+        font-size: 18px;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .login-button {
+        display: none;
+    }
+
+    .mobile-login-button{
+      display: block;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(1, 300px);
+        gap: 30px;
+        padding: 100px 20px 32px;
+    }
+    
+    .service-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .navbar .logo-text {
+      font-size: 20px;
+  }
+
+  .logo svg {
+      width: 40px;
+  }
+  
+  .services-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 80px 10px 20px;
+      max-width: 100%;
+  }
+  
+  .service-card {
+      max-width: 100%;
+      width: auto;
+      margin: 0 auto 15px;
+      padding: 15px;
+  }
+  
+  .service-header {
+      gap: 10px;
+      margin-bottom: 15px;
+  }
+  
+  .service-header h2 {
+      font-size: 18px;
+      line-height: 1.2;
+  }
+  
+  .service-icon {
+      padding: 8px;
+  }
+  
+  .service-icon svg {
+      width: 20px;
+      height: 20px;
+  }
+  
+  .service-description {
+      font-size: 14px;
+      margin-bottom: 15px;
+  }
+  
+  .feature-list {
+      margin-bottom: 15px;
+  }
+  
+  .feature-list li {
+      font-size: 13px;
+      margin-bottom: 8px;
+  }
+  
+  .read-more {
+      padding: 10px;
+      font-size: 13px;
+  }
+
+  .popup-box {
+      max-width: 80%;
+      padding: 15px;
+      margin: 0 auto;
+      position: fixed;
+      margin-left: -30px;
+  }
+  
+  .popup-header {
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+      gap: 10px;
+  }
+  
+  .popup-icon {
+      padding: 10px;
+  }
+  
+  .popup-icon svg {
+      width: 20px;
+      height: 20px;
+  }
+  
+  .popup-header h2 {
+      font-size: 18px;
+  }
+  
+  .popup-body h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+  }
+  
+  .popup-body p {
+      font-size: 14px;
+      margin-bottom: 12px;
+  }
+  
+  .highlight {
+      padding: 10px;
+      font-size: 13px;
+  }
+  
+  .calculator-container {
+      padding: 10px;
+      font-size: 13px;
+  }
+  
+  .calculator-input {
+      width: 50px;
+      padding: 5px;
+  }
+  
+  .checkbox-group {
+      margin-right: 8px;
+      font-size: 12px;
+  }
+  
+  .calculator-btn {
+      padding: 8px;
+      font-size: 13px;
+  }
+  
+  .result-container {
+      padding: 8px;
+  }
+  
+  .result-header {
+      font-size: 13px;
+  }
+  
+  .result-value {
+      font-size: 15px;
+  }
+  
+  .result-label, .strength-label {
+      font-size: 12px;
+  }
+}
+
+    </style>
+
+</head>
+
+
+<body>
+  <div class="navbar">
+      <div class="navbar-content">
+          <a href="#" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+              <defs>
+                <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#050505" />
+                  <stop offset="100%" stop-color="#000000" />
+                </linearGradient>
+                <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#64ffda" stop-opacity="0.6" />
+                  <stop offset="100%" stop-color="#38a89d" stop-opacity="0.3" />
+                </linearGradient>
+                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+              
+              <path d="M250 50 L420 120 L420 240 C420 350 340 410 250 440 C160 410 80 350 80 240 L80 120 Z" fill="url(#shieldGradient)" stroke="#64ffda" stroke-width="6"/>
+              
+              <path d="M250 80 L390 140 L390 235 C390 330 325 380 250 405 C175 380 110 330 110 235 L110 140 Z" fill="#000000" stroke="#64ffda" stroke-width="3" opacity="0.9"/>
+              <path d="M250 110 L360 160 L360 230 C360 310 310 350 250 375 C190 350 140 310 140 230 L140 160 Z" fill="#000000" stroke="#64ffda" stroke-width="2" stroke-dasharray="2,1" opacity="0.7"/>
+              
+              <g opacity="0.2">
+                <text x="140" y="200" font-family="monospace" font-size="8" fill="#64ffda">01001010110110110110</text>
+                <text x="140" y="215" font-family="monospace" font-size="8" fill="#64ffda">10110101101001010110</text>
+                <text x="140" y="230" font-family="monospace" font-size="8" fill="#64ffda">01010101101010101010</text>
+                <text x="140" y="245" font-family="monospace" font-size="8" fill="#64ffda">11010101011010101010</text>
+                <text x="140" y="260" font-family="monospace" font-size="8" fill="#64ffda">10101101010101010110</text>
+                <text x="140" y="275" font-family="monospace" font-size="8" fill="#64ffda">01010110101010101101</text>
+                <text x="140" y="290" font-family="monospace" font-size="8" fill="#64ffda">10101011010101010101</text>
+                <text x="140" y="305" font-family="monospace" font-size="8" fill="#64ffda">01010101010101010101</text>
+              </g>
+              
+              <path d="M140 230 L180 230 L180 280 L220 280 L220 320 L280 320 L280 280 L320 280 L320 230 L360 230" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+              <path d="M180 160 L180 230" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+              <path d="M320 160 L320 230" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+              <path d="M250 140 L250 190" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+              <path d="M220 320 L220 370" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+              <path d="M280 320 L280 370" fill="none" stroke="#64ffda" stroke-width="2" stroke-dasharray="3,2"/>
+              
+              <circle cx="180" cy="230" r="6" fill="#64ffda" filter="url(#glow)"/>
+              <circle cx="220" cy="280" r="6" fill="#64ffda" filter="url(#glow)"/>
+              <circle cx="280" cy="280" r="6" fill="#64ffda" filter="url(#glow)"/>
+              <circle cx="320" cy="230" r="6" fill="#64ffda" filter="url(#glow)"/>
+              <circle cx="250" cy="140" r="6" fill="#64ffda" filter="url(#glow)"/>
+              <circle cx="250" cy="190" r="6" fill="#64ffda" filter="url(#glow)"/>
+              <circle cx="220" cy="320" r="6" fill="#64ffda" filter="url(#glow)"/>
+              <circle cx="280" cy="320" r="6" fill="#64ffda" filter="url(#glow)"/>
+              
+              <g transform="translate(215, 200)">
+                <rect x="-35" y="0" width="70" height="65" rx="10" ry="10" fill="#000000" stroke="#64ffda" stroke-width="3"/>
+                <path d="M-20 0 L-20 -30 C-20 -50 20 -50 20 -30 L20 0" fill="none" stroke="url(#glowGradient)" stroke-width="11" stroke-linecap="round"/>
+                
+                <circle cx="0" cy="25" r="15" fill="#000000" stroke="#64ffda" stroke-width="2.5"/>
+                <path d="M0 25 L0 45" stroke="#64ffda" stroke-width="6" stroke-linecap="round"/>
+                
+                <path d="M-8 25 L8 25" stroke="#64ffda" stroke-width="1.5"/>
+                <path d="M-6 30 L6 30" stroke="#64ffda" stroke-width="1.5"/>
+              </g>
+              
+              <g opacity="0.6">
+                <path d="M175 370 L190 360 L205 370 L205 390 L190 400 L175 390 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                <path d="M205 370 L220 360 L235 370 L235 390 L220 400 L205 390 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                <path d="M235 370 L250 360 L265 370 L265 390 L250 400 L235 390 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                <path d="M265 370 L280 360 L295 370 L295 390 L280 400 L265 390 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                <path d="M190 340 L205 330 L220 340 L220 360 L205 370 L190 360 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                <path d="M220 340 L235 330 L250 340 L250 360 L235 370 L220 360 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+                <path d="M250 340 L265 330 L280 340 L280 360 L265 370 L250 360 Z" fill="none" stroke="#64ffda" stroke-width="1"/>
+              </g>
+              
+              <path d="M140 180 L170 180" stroke="#64ffda" stroke-width="2"/>
+              <path d="M330 180 L360 180" stroke="#64ffda" stroke-width="2"/>
+              <path d="M140 180 Q250 145 360 180" stroke="#64ffda" stroke-width="1.5" fill="none"/>
+              <path d="M140 180 Q250 155 360 180" stroke="#64ffda" stroke-width="0.8" fill="none" opacity="0.7"/>
+              <path d="M140 180 Q250 165 360 180" stroke="#64ffda" stroke-width="0.5" fill="none" opacity="0.5"/>
+              <path d="M140 180 Q250 175 360 180" stroke="#64ffda" stroke-width="0.3" fill="none" opacity="0.3"/>
+              
+              <circle cx="250" cy="250" r="180" fill="none" stroke="#64ffda" stroke-width="0.5" opacity="0.2"/>
+              <circle cx="250" cy="250" r="190" fill="none" stroke="#64ffda" stroke-width="0.3" opacity="0.15"/>
+              <circle cx="250" cy="250" r="200" fill="none" stroke="#64ffda" stroke-width="0.2" opacity="0.1"/>
+              
+              <circle cx="250" cy="250" r="120" fill="none" stroke="#64ffda" stroke-width="2" opacity="0.1"/>
+              <circle cx="250" cy="250" r="130" fill="none" stroke="#64ffda" stroke-width="1.5" opacity="0.08"/>
+              <circle cx="250" cy="250" r="140" fill="none" stroke="#64ffda" stroke-width="1" opacity="0.05"/>
+          </svg>
+              <span class="logo-text">TAMPUGAO</span>
+          </a>
+          <button class="mobile-menu-btn" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="aboutme.html">About</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="mobile-login-button">Login / Sign Up</a>
+        </div>
+        <a href="login.html" class="login-button">Login / Sign Up</a>
+    </div>
+</div>
+
+
+<main class="services-grid">
+  <div class="service-card">
+    <div class="service-header">
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+        </svg>
+      </div>
+      <h2>Risk <br>Assessment</h2>
+    </div>
+    <p class="service-description">
+      In-depth analysis using advanced monitoring to detect hidden vulnerabilities and swiftly mitigate system weaknesses.
+    </p>
+    <ul class="feature-list">
+      <li>Weekly Security Scans</li>
+      <li>Detailed Risk Reports</li>
+      <li>Compliance Assessment</li>
+    </ul>
+    <button class="read-more" onclick="showPopup('vulnerability')">
+      Read More
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="service-card">
+    <div class="service-header">
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="14" x="2" y="3" rx="2" />
+          <line x1="8" x2="16" y1="21" y2="21" />
+          <line x1="12" x2="12" y1="17" y2="21" />
+        </svg>
+      </div>
+      <h2>Security Monitoring</h2>
+    </div>
+    <p class="service-description">
+      Continuous 24/7 monitoring using advanced analytics for proactive threat detection, real-time alerts, and rapid response.
+    <ul class="feature-list">
+      <li>Real-time Alerts</li>
+      <li>Intrusion Detection</li>
+      <li>Security Logging</li>
+    </ul>
+    <button class="read-more" onclick="showPopup('monitoring')">
+      Read More
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="service-card">
+    <div class="service-header">
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+          <line x1="12" x2="12" y1="9" y2="13" />
+          <line x1="12" x2="12.01" y1="17" y2="17" />
+        </svg>
+      </div>
+      <h2>Incident Response</h2>
+    </div>
+    <p class="service-description">
+      Swift response with containment protocols for fast threat isolation, reduced damage, and quick recovery.
+    <ul class="feature-list">
+      <li>1-Hour Response</li>
+      <li>Threat Containment</li>
+      <li>Recovery Planning</li>
+    </ul>
+    <button class="read-more" onclick="showPopup('incident')">
+      Read More
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="service-card">
+    <div class="service-header">
+      <div class="service-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <path d="M22 6l-10 7L2 6" />
+        </svg>
+      </div>
+      <h2>Combination Calculator</h2>
+    </div>
+    <p class="service-description">
+      Advanced password analysis and encryption combination testing to effectively uncover vulnerabilities and improve security.
+    </p>
+    <ul class="feature-list">
+      <li>Alphanumeric Analysis</li>
+      <li>Special Character Sets</li>
+      <li>Encryption Strength Testing</li>
+    </ul>
+    <button class="read-more" onclick="showPopup('combinations')">
+      Read More
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </div>
+</main>
+
+<div id="showPopup" class="popup">
+  <div class="popup-box">
+    <div id="popup-header" class="popup-header"></div>
+    <div id="popup-body" class="popup-body"></div>
+  </div>
+</div>
+
+<script>
+  var serviceDetails = {
+    vulnerability: {
+        title: "Risk Assessment",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>',
+        content: '\
+            <h3>Advanced Threat Detection</h3>\
+            <p>This service uses powerful tools to find security weaknesses in networks, applications, and systems. It scans for vulnerabilities, checks compliance with industry standards, and provides clear steps to fix problems based on risk level.</p>\
+            <div class="highlight">99.9% detection for enterprise security</div>\
+        '
+    },
+    monitoring: {
+        title: "Security Monitoring",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>',
+        content: '\
+            <h3>24/7 Protection System</h3>\
+            <p>This service watches all digital systems around the clock. Smart technology checks for unusual activities and sends instant alerts when threats are detected. The system creates detailed reports on all security events to help prevent future problems.</p>\
+            <div class="highlight">24/7/365 enterprise-grade surveillance</div>\
+        '
+    },
+    incident: {
+        title: "Incident Response",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>',
+        content: '\
+            <h3>Rapid Response & Recovery</h3>\
+            <p>This service takes immediate action when security problems happen. It responds within one hour, contains threats quickly, and restores systems to normal operation with minimal downtime. Each incident helps improve future security measures.</p>\
+            <div class="highlight">Guaranteed 1-hour incident response</div>\
+        '
+    },
+    combinations: {
+      title: "Password Strength Calculator",
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><path d="M22 6l-10 7L2 6" /></svg>',
+      content: '\
+        <h3>Password Strength Analyzer</h3>\
+        <p>Calculate possible combinations and evaluate password strength against brute force attacks.</p>\
+        <div class="calculator-container">\
+          <div class="option-group">\
+            <label for="length">Length:</label>\
+            <input type="number" id="length" min="1" max="50" value="8" class="calculator-input">\
+          </div>\
+          <div class="option-group">\
+            <label>Characters:</label>\
+            <div class="checkboxes-container">\
+              <div class="checkbox-group">\
+                <input type="checkbox" id="lowercase" checked>\
+                <label for="lowercase">a-z</label>\
+              </div>\
+              <div class="checkbox-group">\
+                <input type="checkbox" id="uppercase" checked>\
+                <label for="uppercase">A-Z</label>\
+              </div>\
+              <div class="checkbox-group">\
+                <input type="checkbox" id="numbers" checked>\
+                <label for="numbers">0-9</label>\
+              </div>\
+              <div class="checkbox-group">\
+                <input type="checkbox" id="special">\
+                <label for="special">!@#$%^&*</label>\
+              </div>\
+            </div>\
+          </div>\
+          <button id="calculate-btn" class="calculator-btn">Calculate</button>\
+          <div id="result" class="result-container">\
+            <div class="result-header">Results:</div>\
+            <div id="combinations" class="result-value">0</div>\
+            <div id="crack-time" class="result-label">Estimated time: calculating...</div>\
+            <div id="strength-meter" class="strength-meter">\
+              <div id="strength-bar" class="strength-bar"></div>\
+            </div>\
+            <div id="strength-label" class="strength-label">Strength: N/A</div>\
+          </div>\
+        </div>\
+      '
+    }
+  };
+
+  function showPopup(service) {
+    var details = serviceDetails[service];
+    document.getElementById('popup-header').innerHTML =
+      '<div class="popup-icon">' + details.icon + '</div><h2>' + details.title + '</h2>';
+    document.getElementById('popup-body').innerHTML = details.content;
+    document.getElementById('showPopup').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    if (service === 'combinations') {
+      initCalculator();
+    }
+  }
+  
+  function initCalculator() {
+    var calculateBtn = document.getElementById('calculate-btn');
+    if (calculateBtn) {
+      calculateBtn.addEventListener('click', calculateCombinations);
+    }
+  }
+  
+  function calculateCombinations() {
+    var length = parseInt(document.getElementById('length').value);
+    var useLowercase = document.getElementById('lowercase').checked;
+    var useUppercase = document.getElementById('uppercase').checked;
+    var useNumbers = document.getElementById('numbers').checked;
+    var useSpecial = document.getElementById('special').checked;
+    
+    var charSetSize = 0;
+    if (useLowercase) charSetSize += 26;
+    if (useUppercase) charSetSize += 26;
+    if (useNumbers) charSetSize += 10;
+    if (useSpecial) charSetSize += 33;
+    
+    var combinations = Math.pow(charSetSize, length);
+    
+    var crackTimeSeconds = combinations / 1000000000; 
+    var crackTimeFormatted = formatExactTime(crackTimeSeconds);
+    
+    document.getElementById('combinations').textContent = formatExactNumber(combinations);
+    document.getElementById('crack-time').textContent = 'Estimated time: ' + crackTimeFormatted;
+    
+    var strengthPercent = calculateStrength(combinations);
+    var strengthBar = document.getElementById('strength-bar');
+    strengthBar.style.width = strengthPercent + '%';
+    
+    if (strengthPercent < 25) {
+      strengthBar.className = 'strength-bar very-weak';
+      document.getElementById('strength-label').textContent = 'Strength: Very Weak';
+    } else if (strengthPercent < 50) {
+      strengthBar.className = 'strength-bar weak';
+      document.getElementById('strength-label').textContent = 'Strength: Weak';
+    } else if (strengthPercent < 75) {
+      strengthBar.className = 'strength-bar medium';
+      document.getElementById('strength-label').textContent = 'Strength: Medium';
+    } else if (strengthPercent < 90) {
+      strengthBar.className = 'strength-bar strong';
+      document.getElementById('strength-label').textContent = 'Strength: Strong';
+    } else {
+      strengthBar.className = 'strength-bar very-strong';
+      document.getElementById('strength-label').textContent = 'Strength: Very Strong';
+    }
+  }
+  
+  function calculateStrength(combinations) {
+    var logCombinations = Math.log10(combinations);
+    var maxLog = 30;
+    return Math.min(100, Math.max(0, (logCombinations / maxLog) * 100));
+  }
+  
+  function formatExactNumber(num) {
+    if (num > 100000000000000000000000000000) {
+      return num.toExponential(2);
+    } else {
+      return num.toLocaleString('en-US', {useGrouping: true, maximumFractionDigits: 0});
+    }
+  }
+  
+  function formatExactTime(seconds) {
+    if (seconds < 1) return seconds.toFixed(10) + " seconds";
+    if (seconds < 60) return seconds.toFixed(2) + " seconds";
+    if (seconds < 3600) {
+      const minutes = seconds / 60;
+      return minutes.toFixed(2) + " minutes";
+    }
+    if (seconds < 86400) {
+      const hours = seconds / 3600;
+      return hours.toFixed(2) + " hours";
+    }
+    if (seconds < 31536000) {
+      const days = seconds / 86400;
+      return days.toFixed(2) + " days";
+    }
+    const years = seconds / 31536000;
+    return years.toFixed(2) + " years";
+  }
+
+  window.onclick = function (event) {
+  var popup = document.getElementById('showPopup');
+  if (event.target == popup) {
+    popup.style.display = 'none';
+    
+    
+    if (window.innerWidth <= 1024) {
+      document.body.style.overflow = 'auto'; 
+    } else {
+      document.body.style.overflow = 'hidden'; 
+    }
+  }
+}
+
+
+  function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    navLinks.classList.toggle('active');
+    
+    const spans = menuBtn.getElementsByTagName('span');
+    if (navLinks.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+    } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    }
+  }
+</script>
+</body>
+</html>
