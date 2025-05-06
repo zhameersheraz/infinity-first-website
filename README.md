@@ -1,2 +1,2 @@
 # infinity-first-website
-This repository contains the very first website we created as part of the Infinity project. Originally built and hosted on the Infinity platform, we’ve now migrated the codebase to GitHub for version control and future development.
+This repository contains the first website I created using the Infinity platform. I originally built and hosted it there, and have now migrated the codebase to GitHub for version control and future updates.
